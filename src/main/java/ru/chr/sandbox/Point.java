@@ -1,4 +1,4 @@
-package sandbox;
+package ru.chr.sandbox;
 
 class Point {
 
