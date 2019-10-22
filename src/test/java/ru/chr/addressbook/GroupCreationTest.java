@@ -23,21 +23,45 @@ public class GroupCreationTest {
         vars = new HashMap<String, Object>();
         driver.get("http://localhost/addressbook/");
         driver.manage().window().setSize(new Dimension(1400, 700));
-        driver.findElement(By.name("user")).sendKeys("admin");
-        driver.findElement(By.name("pass")).sendKeys("secret");
+        login("admin", "secret");
+    }
+
+    private void login(String username, String password) {
+        driver.findElement(By.name("user")).sendKeys(username);
+        driver.findElement(By.name("pass")).sendKeys(password);
         driver.findElement(By.cssSelector("input:nth-child(7)")).click();
     }
 
     @Test
     public void testGroupCreation() {
+        gotoGroupPage();
+        initGroupCreation("new");
+        initGroupCreation("group_name");
+        fillGroupForm(new GroupData("test1", "test2", "test3"));
+        submitGroupCreation("submit");
+        returnToGroupPage(By.linkText("groups"));
+    }
+
+    private void gotoGroupPage() {
         driver.findElement(By.linkText("groups")).click();
-        driver.findElement(By.name("new")).click();
-        driver.findElement(By.name("group_name")).click();
-        driver.findElement(By.name("group_name")).sendKeys("test1");
-        driver.findElement(By.name("group_header")).sendKeys("test2");
-        driver.findElement(By.name("group_footer")).sendKeys("test3");
-        driver.findElement(By.name("submit")).click();
-        driver.findElement(By.linkText("groups")).click();
+    }
+
+    private void initGroupCreation(String s) {
+        driver.findElement(By.name(s)).click();
+    }
+
+    private void fillGroupForm(GroupData groupData) {
+        driver.findElement(By.name("group_name")).sendKeys(groupData.getName());
+        driver.findElement(By.name("group_header")).sendKeys(groupData.getHeader());
+        driver.findElement(By.name("group_footer")).sendKeys(groupData.getFooter());
+    }
+
+    private void submitGroupCreation(String submit) {
+        driver.findElement(By.name(submit)).click();
+    }
+
+    private void returnToGroupPage(By groups) {
+        driver.findElement(groups).click();
     }
 
     @After
