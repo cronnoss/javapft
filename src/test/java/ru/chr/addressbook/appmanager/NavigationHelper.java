@@ -5,13 +5,13 @@ import org.openqa.selenium.WebDriver;
 
 public class NavigationHelper {
 
-    private WebDriver driver;
+    private WebDriver wd;
 
     public NavigationHelper(WebDriver driver) {
-        this.driver = driver;
+        this.wd = driver;
     }
 
     public void gotoGroupPage() {
-        driver.findElement(By.linkText("groups")).click();
+        wd.findElement(By.linkText("groups")).click();
     }
 }

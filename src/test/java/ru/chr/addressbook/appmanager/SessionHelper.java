@@ -5,16 +5,20 @@ import org.openqa.selenium.WebDriver;
 
 public class SessionHelper {
 
-    private WebDriver driver;
+    private WebDriver wd;
 
     public SessionHelper(WebDriver driver) {
 
-        this.driver = driver;
+        this.wd = driver;
     }
 
     public void login(String username, String password) {
-        driver.findElement(By.name("user")).sendKeys(username);
-        driver.findElement(By.name("pass")).sendKeys(password);
-        driver.findElement(By.cssSelector("input:nth-child(7)")).click();
+        wd.findElement(By.name("user")).click();
+        wd.findElement(By.name("user")).clear();
+        wd.findElement(By.name("user")).sendKeys(username);
+        wd.findElement(By.name("pass")).click();
+        wd.findElement(By.name("pass")).clear();
+        wd.findElement(By.name("pass")).sendKeys(password);
+        wd.findElement(By.cssSelector("input:nth-child(7)")).click();
     }
 }

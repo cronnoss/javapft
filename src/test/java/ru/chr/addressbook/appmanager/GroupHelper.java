@@ -6,35 +6,41 @@ import ru.chr.addressbook.model.GroupData;
 
 public class GroupHelper {
 
-    private WebDriver driver;
+    private WebDriver wd;
 
-    public GroupHelper(WebDriver driver) {
-        this.driver = driver;
+    public GroupHelper(WebDriver wd) {
+        this.wd = wd;
     }
 
     public void initGroupCreation(String s) {
-        driver.findElement(By.name(s)).click();
+        wd.findElement(By.name(s)).click();
     }
 
     public void fillGroupForm(GroupData groupData) {
-        driver.findElement(By.name("group_name")).sendKeys(groupData.getName());
-        driver.findElement(By.name("group_header")).sendKeys(groupData.getHeader());
-        driver.findElement(By.name("group_footer")).sendKeys(groupData.getFooter());
+        wd.findElement(By.name("group_name")).click();
+        wd.findElement(By.name("group_name")).clear();
+        wd.findElement(By.name("group_name")).sendKeys(groupData.getName());
+        wd.findElement(By.name("group_header")).click();
+        wd.findElement(By.name("group_header")).clear();
+        wd.findElement(By.name("group_header")).sendKeys(groupData.getHeader());
+        wd.findElement(By.name("group_footer")).click();
+        wd.findElement(By.name("group_footer")).clear();
+        wd.findElement(By.name("group_footer")).sendKeys(groupData.getFooter());
     }
 
     public void submitGroupCreation(String submit) {
-        driver.findElement(By.name(submit)).click();
+        wd.findElement(By.name(submit)).click();
     }
 
     public void returnToGroupPage(By groups) {
-        driver.findElement(groups).click();
+        wd.findElement(groups).click();
     }
 
     public void selectGroup() {
-        driver.findElement(By.name("selected[]")).click();
+        wd.findElement(By.name("selected[]")).click();
     }
 
     public void deleteSelectedGroups() {
-        driver.findElement(By.name("delete")).click();
+        wd.findElement(By.name("delete")).click();
     }
 }
