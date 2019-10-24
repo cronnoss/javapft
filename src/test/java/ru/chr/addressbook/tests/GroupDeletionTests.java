@@ -1,7 +1,6 @@
 package ru.chr.addressbook.tests;
 
 import org.junit.Test;
-import org.openqa.selenium.By;
 
 public class GroupDeletionTests extends TestBase {
 
@@ -10,6 +9,6 @@ public class GroupDeletionTests extends TestBase {
         app.getNavigationHelper().gotoGroupPage();
         app.getGroupHelper().selectGroup();
         app.getGroupHelper().deleteSelectedGroups();
-        app.getGroupHelper().returnToGroupPage(By.linkText("groups"));
+        app.getGroupHelper().returnToGroupPage();
     }
 }
