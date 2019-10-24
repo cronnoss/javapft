@@ -3,7 +3,7 @@ package ru.chr.addressbook.tests;
 import org.junit.Test;
 import ru.chr.addressbook.model.GroupData;
 
-public class GroupCreationTest extends TestBase {
+public class GroupCreationTests extends TestBase {
 
     @Test
     public void testGroupCreation() {
