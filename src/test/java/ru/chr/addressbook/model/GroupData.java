@@ -1,4 +1,4 @@
-package ru.chr.addressbook;
+package ru.chr.addressbook.model;
 
 public class GroupData {
     private final String name;
