@@ -29,4 +29,16 @@ public class ContactHelper extends HelperBase {
     public void returnToHomePage() {
         click(By.linkText("home"));
     }
+
+    public void selectContact() {
+        click(By.name("selected[]"));
+    }
+
+    public void deleteSelectedContacts() {
+        click(By.xpath("//input[@value='Delete']"));
+    }
+
+    public void acceptAllert() {
+        wd.switchTo().alert().accept();
+    }
 }
