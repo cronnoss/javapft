@@ -10,8 +10,8 @@ public class GroupHelper extends HelperBase {
         super(wd);
     }
 
-    public void returnToGroupPage() {
-        click(By.linkText("groups"));
+    public void initGroupCreation() {
+        click(By.name("new"));
     }
 
     public void fillGroupForm(GroupData groupData) {
@@ -24,8 +24,8 @@ public class GroupHelper extends HelperBase {
         click(By.name("submit"));
     }
 
-    public void initGroupCreation() {
-        click(By.name("new"));
+    public void returnToGroupPage() {
+        click(By.linkText("groups"));
     }
 
     public void selectGroup() {
