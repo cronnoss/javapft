@@ -1,6 +1,6 @@
 package ru.chr.addressbook.tests;
 
-import org.junit.Test;
+import org.testng.annotations.Test;
 
 public class GroupDeletionTests extends TestBase {
 

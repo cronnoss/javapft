@@ -1,6 +1,6 @@
 package ru.chr.addressbook.tests;
 
-import org.junit.Test;
+import org.testng.annotations.Test;
 import ru.chr.addressbook.model.GroupData;
 
 public class GroupModificationTests extends TestBase {

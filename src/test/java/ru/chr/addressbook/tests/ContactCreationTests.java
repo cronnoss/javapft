@@ -1,6 +1,6 @@
 package ru.chr.addressbook.tests;
 
-import org.junit.Test;
+import org.testng.annotations.Test;
 import ru.chr.addressbook.model.ContactData;
 
 public class ContactCreationTests extends TestBase {
